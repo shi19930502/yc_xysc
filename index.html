@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title></title>
+		<link rel="stylesheet" href="//unpkg.com/vue-ydui/dist/ydui.base.css">
+    	<script src="http://webapi.amap.com/maps?v=1.4.1&key=ca3bd86f98c8f031d26e85c82ae6eac0"></script>
+		<script src="//unpkg.com/vue-ydui/dist/ydui.flexible.js"></script>
+
+	<body>
+		<div id="app"></div>
+		<!-- built files will be auto injected -->
+		<script type="text/javascript">
+			var CITY='银川'; //'临沂'、'塞上'、'银川'login 图片切换,接口的替换
+			var ADDR='all'; //路由切换 beihuan、all表示北环(最好用all)。else表示临沂
+			var SYSTEMID=8;//7管8微 
+			if(SYSTEMID==7){
+				ADDR='beihuan'
+			}
+            var ROOT_API = 'http://10.2.5.35:8040'
+     		var ROOT_API = 'http://10.2.15.57:8080/center-pre-interface/';
+			var IMG_URL = ROOT_API+'/'
+			var CONFIG={ 
+				imgURL:ROOT_API+'/',
+				addr:ADDR,
+				systemid:SYSTEMID,
+				ssbhbgimg:false, //true为塞上北环的背景别切区分和银川的extend
+				footerName:CITY=='银川'?'- 成都九洲电子信息系统股份有限公司 -':'- 宁夏农鲜汇农业科技发展有限公司 -',
+				quickLogin:false,//是否在进场查看二维码时，扫码快捷登录
+				carReg:false,//true:开启车辆验证
+				wX_URL:ROOT_API+"/mp/qr_order/index.html",
+				//下面的几个配置勿动
+				isTowGYS:true, //**必须参数**是否二批供应商登录，塞上北环通过地址栏判断，(银川为二批)
+				goUrl:'',
+				urlStr:'',
+				urlName:'Index',
+				resolveStr:'',
+				isSearch:false,//判断location的search index.html?a=0 非/#/?a=0
+			}
+		</script>
+	</body>
+
+</html>
